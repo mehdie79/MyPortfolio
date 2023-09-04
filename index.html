@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title> Mehdi Esmaeilzadeh Portfolio website</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="fontawesome.css">
+		<link rel="stylesheet" href="styles.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	</head>
+	<body>
+		<div class="main">
+
+		<div id="header"> 
+			<div class = "container"> 
+				<nav> 
+					
+					<h2 class="logo"> Mehdi Esmaeilzadeh </h2>
+					<ul>
+						<li> <a href="#header">Home </a> </li>
+						<li> <a href="#about">About </a> </li>
+						<li> <a href="#project">Projects</a> </li>
+						<li> <a href="#contact">Contact </a> </li>
+					</ul>
+				</nav>
+			</div>
+			<!--This is a comment. Comments are not displayed in the browser <div class="header-text">
+				<h1> Hi, Welcome To My Portfolio </h1>
+				
+			</div>-->
+
+			
+			
+		</div>
+		<section id = "profile">
+			<div class="section__pic-container">
+				<img src="./Photos/my_photo.jpg" alt="Mehdi Esmaeilzadeh picture">
+			</div>
+			<div class="section__text">
+				<p class="section__text__p1"> Hello, I'm </p>
+				<h1 class="title"> Mehdi Esmaeilzadeh </h1>
+				<p class="section__text__p2"> Software Developer 
+				<div class="btn-container">
+					<button class="new-btn btn-color-2" onclick="window.open('./Photos/MehdiEsmaeilzadeh_Resume.pdf')"> Download CV 
+						 
+					</button>
+					<button class="new-btn btn-color-1" onclick="location.href='./#contact'"> Contact Info </button>
+				</div>
+
+			<div id="socials-container">
+				<a class="icon" href="https://github.com/mehdie79" target="_blank"> <i class="fa fa-github" ></i> </a>
+						<a class="icon" href="https://linkedin.com/in/mehdi-esmaeilzadeh" target="_blank"> <i class="fa fa-linkedin-square"></i>  </a>
+			</div>
+		</div>
+	</section>
+		
+		<div id="about">
+			<div class="container">
+				<div class="row">
+					<div class="about-col-1">
+						<img src="./Photos/about_me_pic.jpg">
+					</div> 
+
+					<div class="about-col-2">
+						<h1 class ="sub-title white">About Me </h1>
+						<p> Highly motivated and passionate computer science graduate with extensive programming skills including C/C++, Java and Python, seeking a career as a software developer where I can apply my technical expertise to positively contribute to the organization’s objective.</p>
+						<div class= "tab-titles">
+							<p class="tab-links active-link" onclick="opentab('skills')" > Skills </p>
+							<p class="tab-links" onclick="opentab('hobby')" > Hobby </p>
+							<p class="tab-links" onclick="opentab('education')" > Education </p>
+						</div>
+						<div class= "tab-contents active-tab" id= "skills"> 
+							<ul> 
+								<li> <span> Languages </span><br> C++, C, Java, Python, HTML, CSS </li>
+								<li> <span> Programs </span><br>  Visual Studio, VMware, Microsoft SQL, Git, Linux/Unix, Bash, GDB, Valgrind, CMake</li>
+
+							</ul>
+						</div>
+						<div class= "tab-contents" id= "hobby"> 
+							<ul> 
+								<li> <span> Sports </span><br> Soccer, Basketball, chess, Swimming </li>
+								<li> <span> Other Hobbies </span><br> Coding, Problem solving, spending time with family </li>
+
+							</ul>
+						</div>
+						<div class= "tab-contents" id= "education"> 
+							<ul> 
+								<li> <span> 2019-2023 </span><br> Simon Fraser University </li>
+								<li> <span> 2017-2019 </span><br> Riverside Secondary School </li>
+							</ul>
+						</div>
+					</div> 
+			
+
+				</div> 
+			
+
+			</div> 
+
+
+		</div>
+	
+
+	<section class="portfolio-section sec-padding" id="project" >
+			<div class="container" >
+				
+					<div class= "section-title">
+						<h2 class="title project"> My Projects </h2>
+					</div>
+				
+				<div class= "row">
+
+				
+				<div class="portfolio-item color-container">
+					<div class="portfolio-item-thumbnail">
+						<img src="./Photos/beagle_bone_new.jpg"> 
+						<video  style="display: none; "  controls>
+							<source src="./Videos/beaglebone.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+							</video>
+					
+				</div>
+				<h2 class="portfolio-item-title"> Beaglepod</h2>
+				<div class= "btn-container">
+					<button class="new-btn btn-color-2" onclick="location.href='https://github.com/aetaati/CMPT433_Project'"> GitHub </button>
+				
+				<button type = "button" class= "new-btn btn-color-2 view-project-btn">  Details </button>
+				</div>
+				<div class="portfolio-item-details" >
+					<div class="description">
+						
+
+						<p> The Beaglepod is able to play music in various formats, while being controlled either locally or remotely. A menu is  displayed on the LCD, that the user can interact with via the joystick. This menu provides options for selecting songs, changing settings, connecting to Bluetooth devices, and various other functionalities.</p>
+
+						<h2> <br> Project Purpose <br><br> </h2>
+						<p> The purpose of this project was to gain a comprehensive understanding of developing embedded applications by working with various devices and large systems. Through this project, I aimed to enhance my problem-solving skills and gain a deeper understanding of the tools and devices utilized by embedded developers to create robust applications. </p>
+						<h2> <br> Features <br><br> </h2>
+						<ul style = "list-style-type: disc;">
+							<li> Upload songs in any format using the website and in a few seconds the song name will be displayed on the LCD </li>
+							<li> The songs can be switched using the joystic of the beaglebone </li>
+							<li> Users can stop, play, or replay a song based on their prefrences </li>
+							<li> Users can use bluetooth to connect to speakers to listen to the songs </li>
+							<li> The volume can controlled using the potentiometer </li>
+						</ul>
+						
+						<h2> <br> Challenges <br><br> </h2>
+						<p> 1. One of the challenges I encountered was coming up with the idea to properly shutdown the device. In
+a large-scale system properly cleaning up all the memory and threads used can be a challenging task. So,
+by discussing ideas with my teammates I was able to come up with the idea to implement a shutdown
+module that reduces the complexity of shutting down the application which helped us save time while
+debugging. <br><br> </p>
+					<p> 2. Designing a menu manager was challenging since the menu manager must know which menu the user
+is currently in to display and properly transition between the menus. Menu manager also uses several
+functionalities from other modules which requires you to properly design a code that can correctly
+manage all the functionalities available in the system. <br> <br></p>
+					<p> 3. Starting to play a song and smoothly transitioning to a new song by stopping the current song and
+starting a new one can be a challenging task. This is because the process of starting/changing songs
+needs to be as seamless as possible for a better user experience. To address this challenge, I collaborated
+with my team through meetings and discussions, and we came up with the idea of designing a song
+manager. The song manager module that I implemented is responsible for handling all aspects related to
+playing and changing songs. This included the process of loading songs, starting and stopping them, and
+transitioning between songs in a seamless manner. It ensures that there are no gaps or glitches in the
+audio playback when transitioning between songs, providing a smooth and uninterrupted listening
+experience for the user. <br><br></p> 
+					</div>
+					<div class="general-info" >
+						<ul>
+							
+							<li>Technologies - <span> C, C++ </span></li>
+							<li>Role - <span> Developer </span></li>
+							<li>GitHub Link -  <a href="https://github.com/aetaati/CMPT433_Project" target="_blank"> https://github.com/aetaati/CMPT433_Project  </a>  </li>
+
+						</ul>
+					
+						</div>
+					</div>
+				</div>
+
+				<div class="portfolio-item color-container">
+					<div class="portfolio-item-thumbnail">
+						<img src="./Photos/game_image_new.png"> 
+						<video  style="display: none; "  controls>
+							<source src="./Videos/maze_game.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+							</video>
+					</div>
+				<h2 class="portfolio-item-title"> Maze Chase Game </h2>
+				<div class= "btn-container">
+					<button class="new-btn btn-color-2" onclick="location.href='https://github.com/mehdie79/MyJavaProject'"> GitHub </button>
+				<button type = "button" class= "new-btn btn-color-2 view-project-btn">  Details  </button>
+				</div>
+				<div class="portfolio-item-details">
+					<div class="description">
+
+						<p> The main goal of the game Rabbit Trails is to have the rabbit(main character) eat all the carrots(regular rewards) and make it out of the garden(maze) without getting caught by the eagle(moving enemy) or getting trapped into many animal traps(punishment). </p>
+					<h2> <br> Project Purpose <br><br> </h2>
+					<p> The primary objective of this project was to enhance user engagement in the game by utilizing AI search algorithm specifically, breadth-first search algorithm.  This algorithm was used to determine the shortest path between the main character and the enemy. Over the course of this project, I gained valuable experience in leveraging Java libraries for game development and effectively utilized frameworks such as JUnit to rigorously test the software's functionality.  </p>
+					
+					<h2> <br> Features <br><br> </h2>
+					<ul style = "list-style-type: disc;">
+							<li> The main character is controlled using arrow keys, allowing movement in all directions (left, right, up, and down).</li>
+							<li> Throughout the maze, regular awards are scattered, which the main character must collect before exiting the maze. </li>
+							<li> Bonus awards intermittently appear and disappear randomly within the maze, offering additional rewards. </li>
+							<li> The maze also contains punishments that, when collected, reduce the character's score. If the score becomes negative, the main character loses the game.</li>
+							<li> Enemies are spread over the maze. They employ the shortest path algorithms to track and pursue the main character, adding an element of excitement to the gameplay. </li>
+						</ul>
+
+						<h2> <br>  Challenges  <br><br> </h2>
+						<p> 1. One of the challenges of the project was implementation of hit boxes. The game features several distinct objects, including the main character, enemies, walls, rewards, and punishments. Effectively implementing hit boxes for each of these objects was crucial to prevent unwanted collisions. Through rigorous testing, I ensured that the hit boxes were functional . <br><br> </p>
+					<p> 2. Another significant challenge I encountered during the project was incorporating an AI search algorithm for enemies to efficiently locate the character by calculating the shortest path. While I had a grasp of AI search algorithms, such as breadth-first search, understanding how to effectively adapt it to my specific use case was challenging. Through extensive research and in-depth comprehension of the algorithm, I successfully overcame this challenge and successfully implemented this feature. <br> <br></p>
+					<p> 3. Addressing the implementation of bonus rewards posed another significant challenge in the project. These bonuses have the unique behavior of appearing and disappearing randomly across the game board after a certain time interval. To tackle this, I had to devise a logic that ensured the effective handling of these dynamic elements<br><br></p> 
+
+					</div>
+					<div class="general-info">
+						<ul>
+							
+							<li>Technologies - <span> Java</span></li>
+							<li>Role - <span> Developer </span></li>
+							<li>GitHub Link -  <a href="https://github.com/mehdie79/MyJavaProject " target="_blank"style="text-decoration-line: none;">  https://github.com/mehdie79/MyJavaProject </a> </li>
+
+						</ul>
+					
+						</div>
+					</div>
+				</div>
+
+				<div class="portfolio-item color-container">
+					<div class="portfolio-item-thumbnail">
+						<img src="./Photos/hospital_simulation_new.jpg"> 
+						<video  style="display: none; "  controls>
+							<source src="./Videos/simulation.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+							</video>
+					</div>
+				<h2 class="portfolio-item-title"> Event driven Simulation Application</h2>
+				<div class= "btn-container">
+					<button class="new-btn btn-color-2" onclick="location.href='https://github.com/mehdie79/Hospital-Simulation'"> GitHub </button>
+				<button type = "button" class= "new-btn btn-color-2 view-project-btn">  Details </button>
+				</div>
+				<div class="portfolio-item-details">
+					<div class="description">
+
+						<p> This project is a hospital emergency department simulation system implemented in C++. The simulation aims to replicate the dynamic operations within an emergency department, including patient flow, medical treatments, and resource management.</p>
+					<h2> <br> Project Purpose <br><br> </h2>
+					<p> In this project, primary goal was to work with a highly threaded application containing numerous critical sections. To ensure smooth operation and prevent race conditions, the focus was on implementing mutexes and optimizing the logic. Through this experience, I honed my skills in debugging and designing complex, multithreaded applications, which contributed to the development of my problem-solving abilities. </p>
+
+					<h2> <br> Features <br><br> </h2>
+					<ul style = "list-style-type: disc;">
+							<li> Event-driven simulation of a hospital's emergency department </li>
+							<li> Real-time representation of patient flow, medical treatments, and resource management </li>
+							<li> Efficient data structures and event routines to synchronize the simulation </li>
+					</ul>
+					<h2> <br>  Challenges  <br><br> </h2>
+					<p> 1. Debugging a multithreaded application like this one can be challenging and time-consuming due to the simultaneous execution of multiple threads. It requires considering all possible behaviors resulting from this concurrency. <br><br> </p>
+					<p> 2. Developing well-designed data structures, such as queues and routines, is crucial and challenging in this project. These data structures play a pivotal role in its success. Code that is thoughtfully designed is not only easier to debug but also simpler to maintain. Through iterative refactoring and revision, was able to achieve well-designed data structures. <br> <br></p>
+					
+					<p> 3. Addressing memory leaks and ensuring proper memory deallocation at the conclusion of the application posed unique challenges. In a multithreaded environment, multiple threads dynamically allocate and modify memory, making it essential to pay attention to detail. By utilizing tools like Valgrind, was able to  track and address memory leaks, ensuring the application's memory was managed effectively. <br><br></p> 
+					
+					</div>
+					<div class="general-info">
+						<ul>
+					
+							<li>Technologies - <span> C, C++ </span></li>
+							<li>Role - <span> Developer </span></li>
+							<li>GitHub Link - <a href="https://github.com/mehdie79/Hospital-Simulation" target="_blank"style="text-decoration-line: none;">  https://github.com/mehdie79/Hospital-Simulation </a></li>
+
+						</ul>
+					
+						</div>
+					</div>
+				</div>
+
+				<div class="portfolio-item color-container">
+					<div class="portfolio-item-thumbnail">
+						<img src="./Photos/chess_game_new.png" >
+						<video  style="display: none; "  controls>
+							<source src="./Videos/Chess_Game.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video> 
+					</div>
+				<h2 class="portfolio-item-title"> Chess Game - Online Multiplayer</h2>
+				<div class= "btn-container">
+					<button class="new-btn btn-color-2" onclick="location.href='https://github.com/aetaati/CMPT433_Project'"> GitHub </button>
+				<button type = "button" class= "new-btn btn-color-2 view-project-btn">  Details </button>
+				</div>
+				<div class="portfolio-item-details">
+					<div class="description">
+
+						<p> I developed an online chess game that offers players the choice to play against their friends in multiplayer mode or challenge a computer opponent. The game provides an engaging and realistic chess-playing experience.</p>
+						<h2> <br> Project Purpose <br><br> </h2>
+					<p> The main goal of this project was to create a chess game, a sport I'm passionate about playing. This chess game allows users to play against the computer or challenge opponents online. Throughout the project, I acquired valuable skills in socket programming and leveraged the pygame library to implement this game.   </p>
+					<h2> <br> Features <br><br> </h2>
+
+					<ul style = "list-style-type: disc;">
+							<li> Users have the option to engage in matches against the computer, with the game powered by the Min-Max algorithm to provide challenging AI opponents. </li>
+							<li> Multiplayer functionality allows users to enjoy online matches with friends by connecting to a server using an IP address and port number. </li>
+							<li> Every move made by users is dynamically logged and displayed on the screen for easy reference and tracking of gameplay. </li>
+							<li> An automatic promotion feature ensures that when Pawns successfully traverse the entire board, they are promoted to Queen pieces.</li>
+							
+						</ul>
+
+						<h2> <br>  Challenges  <br><br> </h2>
+						<p> 1. Developing the client and server architecture for enabling online gameplay was a pivotal and challenging aspect of this project. It involved ensuring the seamless exchange of relevant messages between the server and clients. Additionally, the server had to effectively manage client connections and guarantee that all players were synchronized, sharing the same game board and experience.   <br><br> </p>
+					<p> 2. Implementing the logic for valid player moves was difficult. This task involved ensuring that the game correctly identified valid moves, adhering to the intricate rules of chess. It demanded handling of scenarios such as moves in check, en passant captures, and castling, all while ensuring that the game consistently followed the rules and accurately determined which moves were permissible in each game position. <br> <br></p>
+					<p> 3. The design phase, encompassing the menu, multiplayer online interface, and game animations, was time-consuming. My goal was to create visually appealing and contextually relevant menu pages, each tailored to its specific purpose. A well-crafted design and captivating animations would elevate the user's engagement and enhance their overall gaming experience.  <br><br></p> 
+					</div>
+					<div class="general-info">
+						<ul>
+							
+							<li>Technologies - <span> Python </span></li>
+							<li>Role - <span> Developer </span></li>
+							<li>GitHub Link - <a href="https://github.com/aetaati/CMPT433_Project" target="_blank"style="text-decoration-line: none;"> https://github.com/mehdie79/Hospital-Simulation  </a></li>
+
+						</ul>
+					
+						</div>
+					</div>
+				</div>
+			
+			</div>
+		</div>
+	</section>
+
+	</div>
+	
+	
+
+	<div class= "portfolio-popup">
+		<div class= "pp-inner">
+			<div class= "pp-content">
+				<div class= "pp-header">
+					<button type="button" class= "btn pp-close"> <i class="fas fa-times"></i> </button>
+					<div class="pp-thumbnail">
+						<video controls>
+							<source  type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+							
+					</div> 
+					<h3></h3>
+				</div>
+					<div class ="pp-body">
+						
+
+					</div>
+
+			</div>
+		</div>
+	</div>
+
+	
+
+
+				
+				
+		<!--<div class="container">
+				<div class="row">
+				<div class="contact-left">
+					<h1 class= "sub-title white"> Contact me </h1>
+					<p><i class="fa fa-envelope"></i> mehdi.esma79@gmail.com </p>
+					<p> <i class="fa fa-phone"></i> 2367887346 </p>
+					<div class="social-icons">
+						<a href="https://github.com/mehdie79" target="_blank"> <i class="fa fa-github" ></i> </a>
+						<a href="https://linkedin.com/in/mehdi-esmaeilzadeh" target="_blank"> <i class="fa fa-linkedin-square"></i>  </a>
+						<a href="linkedin.com/in/mehdi-esmaeilzadeh" target="_blank" > <i class="fa fa-instagram"></i>  </a>
+						
+					</div>
+					
+				</div>
+					<div class="contact-right">
+						<form>
+							<input type="text" name="Name" placeholder="Your Name" required>
+							<input type="email" name="email" placeholder="Your Email" required>
+							<textarea name="Message" rows="6" placeholder="Your Message" required> </textarea>
+							<button type="submit" class="btn btn2"> Submit </button>
+
+						</form>
+						
+					</div>
+				</div>
+
+			</div>-->
+			<section id="contact">
+				<p class="section__text__p1"> Get in touch </p>
+				<h1 class="title"> Contact Me </h1>
+				<div class="contact-info-upper-container">
+					<div class="contact-info-container">
+						<p class="icon contact-icon"><i class="fa fa-envelope"></i> <a href="mailto:mehdi.esma79@gmail.com" style="text-decoration-line: none;"> </a> mehdi.esma79@gmail.com </p>
+						
+					</div>
+					<div class="contact-info-container" style="text-decoration-line: none;">
+						<p  class="icon contact-icon"> <i class="fa fa-phone"></i> +12367887346 </p>
+					</div>
+					
+				</div>
+				
+			</section>
+
+			<footer>
+				<p>Copyright &#169; 2023 Mehdi Esmaeilzadeh. All Rights Reserved </p>
+			</footer>
+			
+			
+			
+		
+			
+			
+		
+		
+		
+		<script> 
+			var tablinks = document.getElementsByClassName("tab-links");
+			var tabcontents = document.getElementsByClassName("tab-contents");
+			function opentab(tabname) {
+				for(tablink of tablinks) {
+					tablink.classList.remove("active-link");
+				}
+				for(tabcontent of tabcontents) {
+					tabcontent.classList.remove("active-tab");
+				}
+				event.currentTarget.classList.add("active-link");
+				document.getElementById(tabname).classList.add("active-tab");
+			}
+
+			document.addEventListener("click", (e) => {
+				if(e.target.classList.contains("view-project-btn")) {
+					togglePortfolioPopup();
+					document.querySelector(".portfolio-popup").scrollTo(0,0);
+					portfolioItemDetails(e.target.parentElement.parentElement);
+				}
+
+			})
+			document.addEventListener("click", (e) => {
+				if(e.target.classList.contains("pp-inner")) {
+					togglePortfolioPopup();
+				} 
+
+			});
+
+			function togglePortfolioPopup() {
+				document.querySelector(".portfolio-popup").classList.toggle("open");
+				document.body.classList.toggle("hide-scrolling");
+				document.querySelector(".main").classList.toggle("fade-out");
+				document.getElementById("contact").classList.toggle("fade-out");
+				
+			}
+			document.querySelector(".pp-close").addEventListener("click", togglePortfolioPopup)
+			document.querySelector(".pp-close").addEventListener("click", togglePortfolioPopup => {
+				document.querySelector(".pp-thumbnail video").pause();
+			});
+
+			function portfolioItemDetails(portfolioItem) {
+				
+				document.querySelector(".pp-thumbnail video source").src = portfolioItem.querySelector(".portfolio-item-thumbnail video source").src;
+				document.querySelector(".pp-thumbnail video").load(); // Load the new source
+    			document.querySelector(".pp-thumbnail video").play();
+				console.log(document.querySelector(".pp-thumbnail video"))
+				document.querySelector(".pp-header h3").innerHTML = portfolioItem.querySelector(".portfolio-item-title").innerHTML;
+				document.querySelector(".pp-body").innerHTML = portfolioItem.querySelector(".portfolio-item-details").innerHTML;
+
+			} 
+
+		</script>
+
+		
+		
+	</body>
+</html>
