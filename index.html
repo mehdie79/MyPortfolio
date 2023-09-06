@@ -346,7 +346,7 @@ experience for the user. <br><br></p>
 		<div class= "pp-inner">
 			<div class= "pp-content">
 				<div class= "pp-header">
-					<button type="button" class= "btn pp-close"> <i class="fas fa-times"></i> </button>
+					<button type="button" class= "btn pp-close" id="close_button"> <i class="fas fa-times"></i> </button>
 					<div class="pp-thumbnail">
 						<video controls>
 							<source  type="video/mp4">
@@ -458,12 +458,18 @@ experience for the user. <br><br></p>
 			const project2Button = document.getElementById('maze_game');
 			const project3Button = document.getElementById('hospital_simulation');
 			const project4Button = document.getElementById('chess_game');
+			const closeButton = document.getElementById('close_button');
+
+			// Event listener for the Close button
+			closeButton.addEventListener('click', function() {
+				// Return to the original path (clear the hash)
+				window.location.hash = '';
+			});
 
 			// Function to update the URL path
 			function updateURLPath(projectName) {
-				const newPath = `/MyPortfolio/${projectName}`;
-				history.pushState(null, null, newPath);
-			}
+    			window.location.hash = projectName;
+			}	
 
 			// Event listeners for project buttons
 			project1Button.addEventListener('click', function() {
@@ -473,7 +479,7 @@ experience for the user. <br><br></p>
 			project2Button.addEventListener('click', function() {
 				updateURLPath('maze_game');
 			});
-			
+
 			project3Button.addEventListener('click', function() {
 				updateURLPath('hospital_simulation');
 			});
