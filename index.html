@@ -141,7 +141,7 @@
 				<div class= "btn-container">
 					<button class="new-btn btn-color-2" onclick="location.href='https://github.com/aetaati/CMPT433_Project'"> GitHub </button>
 				
-				<button type = "button" class= "new-btn btn-color-2 view-project-btn">  Details </button>
+				<button type = "button" class= "new-btn btn-color-2 view-project-btn" id="beaglepod">  Details </button>
 				</div>
 				<div class="portfolio-item-details" >
 					<div class="description">
@@ -203,7 +203,7 @@ experience for the user. <br><br></p>
 					</div>
 				<h2 class="portfolio-item-title"> Maze Chase Game </h2>
 				<div class= "btn-container">
-					<button class="new-btn btn-color-2" onclick="location.href='https://github.com/mehdie79/MyJavaProject'"> GitHub </button>
+					<button class="new-btn btn-color-2" onclick="location.href='https://github.com/mehdie79/MyJavaProject'" id="maze_game"> GitHub </button>
 				<button type = "button" class= "new-btn btn-color-2 view-project-btn">  Details  </button>
 				</div>
 				<div class="portfolio-item-details">
@@ -252,7 +252,7 @@ experience for the user. <br><br></p>
 				<h2 class="portfolio-item-title"> Event driven Simulation Application</h2>
 				<div class= "btn-container">
 					<button class="new-btn btn-color-2" onclick="location.href='https://github.com/mehdie79/Hospital-Simulation'"> GitHub </button>
-				<button type = "button" class= "new-btn btn-color-2 view-project-btn">  Details </button>
+				<button type = "button" class= "new-btn btn-color-2 view-project-btn" id= "hospital_simulation">  Details </button>
 				</div>
 				<div class="portfolio-item-details">
 					<div class="description">
@@ -298,7 +298,7 @@ experience for the user. <br><br></p>
 				<h2 class="portfolio-item-title"> Chess Game - Online Multiplayer</h2>
 				<div class= "btn-container">
 					<button class="new-btn btn-color-2" onclick="location.href='https://github.com/mehdie79/chessGame'"> GitHub </button>
-				<button type = "button" class= "new-btn btn-color-2 view-project-btn">  Details </button>
+				<button type = "button" class= "new-btn btn-color-2 view-project-btn" id= "chess_game">  Details </button>
 				</div>
 				<div class="portfolio-item-details">
 					<div class="description">
@@ -451,7 +451,36 @@ experience for the user. <br><br></p>
 				document.querySelector(".pp-header h3").innerHTML = portfolioItem.querySelector(".portfolio-item-title").innerHTML;
 				document.querySelector(".pp-body").innerHTML = portfolioItem.querySelector(".portfolio-item-details").innerHTML;
 
-			} 
+			}
+			
+			// Button 
+			const project1Button = document.getElementById('beaglepod');
+			const project2Button = document.getElementById('maze_game');
+			const project3Button = document.getElementById('hospital_simulation');
+			const project4Button = document.getElementById('chess_game');
+
+			// Function to update the URL path
+			function updateURLPath(projectName) {
+				const newPath = `/MyPortfolio/${projectName}`;
+				history.pushState(null, null, newPath);
+			}
+
+			// Event listeners for project buttons
+			project1Button.addEventListener('click', function() {
+				updateURLPath('beaglepod'); // Update the URL path
+			});
+
+			project2Button.addEventListener('click', function() {
+				updateURLPath('maze_game');
+			});
+			
+			project3Button.addEventListener('click', function() {
+				updateURLPath('hospital_simulation');
+			});
+
+			project4Button.addEventListener('click', function() {
+				updateURLPath('chess_game');
+			});
 
 		</script>
 
