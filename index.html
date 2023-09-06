@@ -467,7 +467,7 @@ experience for the user. <br><br></p>
 			
 
 			 //Event listener for the Close button
-			closeButton.addEventListener('click', function() {
+			{% comment %} closeButton.addEventListener('click', function() {
 				// Return to the original path (clear the hash)
 				window.location.hash = 'project';
 			});
@@ -492,7 +492,7 @@ experience for the user. <br><br></p>
 
 			project4Button.addEventListener('click', function() {
 				updateURLPath('chess_game');
-			}); 
+			});  {% endcomment %}
 
 		</script>
 
