@@ -143,8 +143,8 @@
 				
 				<button type = "button" class= "new-btn btn-color-2 view-project-btn" >  Details </button>
 				</div>
-				<div class="portfolio-item-details" >
-					<div class="description" id="beaglepod">
+				<div class="portfolio-item-details" id="beaglepod">
+					<div class="description" >
 						
 
 						<p> The Beaglepod is able to play music in various formats, while being controlled either locally or remotely. A menu is  displayed on the LCD, that the user can interact with via the joystick. This menu provides options for selecting songs, changing settings, connecting to Bluetooth devices, and various other functionalities.</p>
@@ -206,8 +206,8 @@ experience for the user. <br><br></p>
 					<button class="new-btn btn-color-2" onclick="location.href='https://github.com/mehdie79/MyJavaProject'"> GitHub </button>
 				<button type = "button" class= "new-btn btn-color-2 view-project-btn">  Details  </button>
 				</div>
-				<div class="portfolio-item-details">
-					<div class="description" id="maze_game">
+				<div class="portfolio-item-details" id="maze_game">
+					<div class="description" >
 
 						<p> The main goal of the game Rabbit Trails is to have the rabbit(main character) eat all the carrots(regular rewards) and make it out of the garden(maze) without getting caught by the eagle(moving enemy) or getting trapped into many animal traps(punishment). </p>
 					<h2> <br> Project Purpose <br><br> </h2>
@@ -460,33 +460,22 @@ experience for the user. <br><br></p>
 			const project4Button = document.getElementById('chess_game');
 			const closeButton = document.getElementById('close_button');
 
-			// Event listener for the Close button
-			closeButton.addEventListener('click', function() {
-				// Return to the original path (clear the hash)
-				window.location.hash = 'project';
-			});
+			// Function to load and display project details based on URL hash
+			function loadProjectFromHash() {
+				const hash = window.location.hash.substr(1); // Remove the '#' from the hash
+				const projectContainer = document.getElementById(hash);
+				if (projectContainer) {
+					// Hide all project containers
+					const allProjectContainers = document.querySelectorAll('.portfolio-item-details');
+					
+				}
+			}
 
-			// Function to update the URL path
-			function updateURLPath(projectName) {
-    			window.location.hash = projectName;
-			}	
+			// Event listener for page load and hash change
+			window.addEventListener('load', loadProjectFromHash);
+			window.addEventListener('hashchange', loadProjectFromHash);
 
-			// Event listeners for project buttons
-			project1Button.addEventListener('click', function() {
-				updateURLPath('beaglepod'); // Update the URL path
-			});
-
-			project2Button.addEventListener('click', function() {
-				updateURLPath('maze_game');
-			});
-
-			project3Button.addEventListener('click', function() {
-				updateURLPath('hospital_simulation');
-			});
-
-			project4Button.addEventListener('click', function() {
-				updateURLPath('chess_game');
-			});
+			
 
 		</script>
 
