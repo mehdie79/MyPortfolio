@@ -141,10 +141,10 @@
 				<div class= "btn-container">
 					<button class="new-btn btn-color-2" onclick="location.href='https://github.com/aetaati/CMPT433_Project'"> GitHub </button>
 				
-				<button type = "button" class= "new-btn btn-color-2 view-project-btn" id="beaglepod">  Details </button>
+				<button type = "button" class= "new-btn btn-color-2 view-project-btn" >  Details </button>
 				</div>
 				<div class="portfolio-item-details" >
-					<div class="description">
+					<div class="description" id="beaglepod">
 						
 
 						<p> The Beaglepod is able to play music in various formats, while being controlled either locally or remotely. A menu is  displayed on the LCD, that the user can interact with via the joystick. This menu provides options for selecting songs, changing settings, connecting to Bluetooth devices, and various other functionalities.</p>
@@ -203,11 +203,11 @@ experience for the user. <br><br></p>
 					</div>
 				<h2 class="portfolio-item-title"> Maze Chase Game </h2>
 				<div class= "btn-container">
-					<button class="new-btn btn-color-2" onclick="location.href='https://github.com/mehdie79/MyJavaProject'" id="maze_game"> GitHub </button>
+					<button class="new-btn btn-color-2" onclick="location.href='https://github.com/mehdie79/MyJavaProject'"> GitHub </button>
 				<button type = "button" class= "new-btn btn-color-2 view-project-btn">  Details  </button>
 				</div>
 				<div class="portfolio-item-details">
-					<div class="description">
+					<div class="description" id="maze_game">
 
 						<p> The main goal of the game Rabbit Trails is to have the rabbit(main character) eat all the carrots(regular rewards) and make it out of the garden(maze) without getting caught by the eagle(moving enemy) or getting trapped into many animal traps(punishment). </p>
 					<h2> <br> Project Purpose <br><br> </h2>
@@ -252,9 +252,9 @@ experience for the user. <br><br></p>
 				<h2 class="portfolio-item-title"> Event driven Simulation Application</h2>
 				<div class= "btn-container">
 					<button class="new-btn btn-color-2" onclick="location.href='https://github.com/mehdie79/Hospital-Simulation'"> GitHub </button>
-				<button type = "button" class= "new-btn btn-color-2 view-project-btn" id= "hospital_simulation">  Details </button>
+				<button type = "button" class= "new-btn btn-color-2 view-project-btn" >  Details </button>
 				</div>
-				<div class="portfolio-item-details">
+				<div class="portfolio-item-details" id= "hospital_simulation">
 					<div class="description">
 
 						<p> This project is a hospital emergency department simulation system implemented in C++. The simulation aims to replicate the dynamic operations within an emergency department, including patient flow, medical treatments, and resource management.</p>
@@ -298,9 +298,9 @@ experience for the user. <br><br></p>
 				<h2 class="portfolio-item-title"> Chess Game - Online Multiplayer</h2>
 				<div class= "btn-container">
 					<button class="new-btn btn-color-2" onclick="location.href='https://github.com/mehdie79/chessGame'"> GitHub </button>
-				<button type = "button" class= "new-btn btn-color-2 view-project-btn" id= "chess_game">  Details </button>
+				<button type = "button" class= "new-btn btn-color-2 view-project-btn">  Details </button>
 				</div>
-				<div class="portfolio-item-details">
+				<div class="portfolio-item-details" id= "chess_game">
 					<div class="description">
 
 						<p> I developed an online chess game that offers players the choice to play against their friends in multiplayer mode or challenge a computer opponent. The game provides an engaging and realistic chess-playing experience.</p>
@@ -463,7 +463,7 @@ experience for the user. <br><br></p>
 			// Event listener for the Close button
 			closeButton.addEventListener('click', function() {
 				// Return to the original path (clear the hash)
-				window.location.hash = '';
+				window.location.hash = 'project';
 			});
 
 			// Function to update the URL path
