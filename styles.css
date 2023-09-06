@@ -525,15 +525,7 @@ form .btn2 {
 }
 
 .hidden-link {
-	display: inline-block;
-		/* or display: block; if needed */
-	text-decoration: none;
-	color: transparent;
-	background-color: transparent;
-	border: none;
-	padding: 0;
-	margin: 0;
-	outline: none;
+	display: none;
 }
 
 .color-container {
