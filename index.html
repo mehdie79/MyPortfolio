@@ -254,7 +254,7 @@ experience for the user. <br><br></p>
 					<button class="new-btn btn-color-2" onclick="location.href='https://github.com/mehdie79/Hospital-Simulation'"> GitHub </button>
 				<button type = "button" class= "new-btn btn-color-2 view-project-btn" >  Details </button>
 				</div>
-				<div class="portfolio-item-details" id= "hospital_simulation">
+				<div class="portfolio-item-details">
 					<div class="description">
 
 						<p> This project is a hospital emergency department simulation system implemented in C++. The simulation aims to replicate the dynamic operations within an emergency department, including patient flow, medical treatments, and resource management.</p>
@@ -298,9 +298,9 @@ experience for the user. <br><br></p>
 				<h2 class="portfolio-item-title"> Chess Game - Online Multiplayer</h2>
 				<div class= "btn-container">
 					<button class="new-btn btn-color-2" onclick="location.href='https://github.com/mehdie79/chessGame'"> GitHub </button>
-				<button type = "button" class= "new-btn btn-color-2 view-project-btn">  Details </button>
+				<button type = "button" class= "new-btn btn-color-2 view-project-btn" id= "chess_game">  Details </button>
 				</div>
-				<div class="portfolio-item-details" id= "chess_game">
+				<div class="portfolio-item-details" >
 					<div class="description">
 
 						<p> I developed an online chess game that offers players the choice to play against their friends in multiplayer mode or challenge a computer opponent. The game provides an engaging and realistic chess-playing experience.</p>
@@ -357,6 +357,7 @@ experience for the user. <br><br></p>
 					<h3></h3>
 				</div>
 					<div class ="pp-body">
+						<li> <a class="link" href="" style= "display: none;"> </a> </li>
 						
 
 					</div>
@@ -417,7 +418,10 @@ experience for the user. <br><br></p>
 
 			document.addEventListener("click", (e) => {
 				if(e.target.classList.contains("view-project-btn")) {
+
+
 					togglePortfolioPopup();
+					document.querySelector(".link").href = '#' + e.target.getAttribute("id");
 					document.querySelector(".portfolio-popup").scrollTo(0,0);
 					portfolioItemDetails(e.target.parentElement.parentElement);
 				}
@@ -460,22 +464,35 @@ experience for the user. <br><br></p>
 			const project4Button = document.getElementById('chess_game');
 			const closeButton = document.getElementById('close_button');
 
-			// Function to load and display project details based on URL hash
-			function loadProjectFromHash() {
-				const hash = window.location.hash.substr(1); // Remove the '#' from the hash
-				const projectContainer = document.getElementById(hash);
-				if (projectContainer) {
-					// Hide all project containers
-					const allProjectContainers = document.querySelectorAll('.portfolio-item-details');
-					
-				}
-			}
-
-			// Event listener for page load and hash change
-			window.addEventListener('load', loadProjectFromHash);
-			window.addEventListener('hashchange', loadProjectFromHash);
-
 			
+
+			 //Event listener for the Close button
+			closeButton.addEventListener('click', function() {
+				// Return to the original path (clear the hash)
+				window.location.hash = 'project';
+			});
+
+			// Function to update the URL path
+			function updateURLPath(projectName) {
+    			window.location.hash = projectName;
+			}	
+
+			// Event listeners for project buttons
+			project1Button.addEventListener('click', function() {
+				updateURLPath('beaglepod'); // Update the URL path
+			});
+
+			project2Button.addEventListener('click', function() {
+				updateURLPath('maze_game');
+			});
+
+			project3Button.addEventListener('click', function() {
+				updateURLPath('hospital_simulation');
+			});
+
+			project4Button.addEventListener('click', function() {
+				updateURLPath('chess_game');
+			}); 
 
 		</script>
 
