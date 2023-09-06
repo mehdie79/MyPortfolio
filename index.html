@@ -129,6 +129,8 @@
 
 				
 				<div class="portfolio-item color-container">
+					<a href="#beaglepod" class="hidden-link"></a>
+
 					<div class="portfolio-item-thumbnail">
 						<img src="./Photos/beagle_bone_new.jpg"> 
 						<video  style="display: none; "  controls>
@@ -194,6 +196,8 @@ experience for the user. <br><br></p>
 				</div>
 
 				<div class="portfolio-item color-container">
+
+					<a href="#maze_game" class="hidden-link"></a>
 					<div class="portfolio-item-thumbnail">
 						<img src="./Photos/game_image_new.png"> 
 						<video  style="display: none; "  controls>
@@ -242,6 +246,7 @@ experience for the user. <br><br></p>
 				</div>
 
 				<div class="portfolio-item color-container">
+					<a href="#hospital_simulation" class="hidden-link"></a>
 					<div class="portfolio-item-thumbnail">
 						<img src="./Photos/hospital_simulation_new.jpg"> 
 						<video  style="display: none; "  controls>
@@ -288,6 +293,8 @@ experience for the user. <br><br></p>
 				</div>
 
 				<div class="portfolio-item color-container">
+					<a href="#chess_game" class="hidden-link"></a>
+
 					<div class="portfolio-item-thumbnail">
 						<img src="./Photos/chess_game_new_image.png" >
 						<video  style="display: none; "  controls>
@@ -456,44 +463,26 @@ experience for the user. <br><br></p>
 				document.querySelector(".pp-body").innerHTML = portfolioItem.querySelector(".portfolio-item-details").innerHTML;
 
 			}
+
+			const hiddenLinks = document.querySelectorAll('.hidden-link');
+
+			hiddenLinks.forEach(link => {
+				link.addEventListener('click', (e) => {
+					e.preventDefault(); // Prevent the default link behavior
+					const targetId = link.getAttribute('href').substring(1); // Get the target section's ID
+					const targetSection = document.getElementById(targetId);
+					if (targetSection) {
+						// Scroll to the target section
+						window.scrollTo({
+							top: targetSection.offsetTop,
+							behavior: 'smooth' // Add smooth scrolling for a nicer effect (optional)
+						});
+					}
+				});
+			});
+
 			
-			// Button 
-			const project1Button = document.getElementById('beaglepod');
-			const project2Button = document.getElementById('maze_game');
-			const project3Button = document.getElementById('hospital_simulation');
-			const project4Button = document.getElementById('chess_game');
-			const closeButton = document.getElementById('close_button');
-
 			
-
-			{% comment %}  //Event listener for the Close button
-			closeButton.addEventListener('click', function() {
-				// Return to the original path (clear the hash)
-				window.location.hash = 'project';
-			});
-
-			// Function to update the URL path
-			function updateURLPath(projectName) {
-    			window.location.hash = projectName;
-			}	
-
-			// Event listeners for project buttons
-			project1Button.addEventListener('click', function() {
-				updateURLPath('beaglepod'); // Update the URL path
-			});
-
-			project2Button.addEventListener('click', function() {
-				updateURLPath('maze_game');
-			});
-
-			project3Button.addEventListener('click', function() {
-				updateURLPath('hospital_simulation');
-			});
-
-			project4Button.addEventListener('click', function() {
-				updateURLPath('chess_game');
-			});  {% endcomment %}
-
 		</script>
 
 		
