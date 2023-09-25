@@ -477,6 +477,7 @@ form .btn2 {
 	flex-direction: column;
 	height: 70vh;
 	transition: all 0.02s ease-in-out;
+	margin-top: 1000px;
 	
 }
 #contact.fade-out {

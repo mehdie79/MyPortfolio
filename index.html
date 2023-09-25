@@ -85,6 +85,7 @@
 							<p class="tab-links active-link" onclick="opentab('skills')" > Skills </p>
 							<p class="tab-links" onclick="opentab('hobby')" > Hobby </p>
 							<p class="tab-links" onclick="opentab('education')" > Education </p>
+							<p class="tab-links" onclick="opentab('certification')" > Certification </p>
 						</div>
 						<div class= "tab-contents active-tab" id= "skills"> 
 							<ul> 
@@ -104,6 +105,12 @@
 							<ul> 
 								<li> <span> 2019-2023 </span><br> Simon Fraser University </li>
 								<li> <span> 2017-2019 </span><br> Riverside Secondary School </li>
+							</ul>
+						</div>
+						<div class= "tab-contents" id= "certification"> 
+							<ul> 
+								<li> <span> 2023-2026 </span><br> AWS Certified Solutions Architect – Associate &nbsp;&nbsp;&nbsp;&nbsp; <button class="new-btn btn-color-2"  onclick="location.href='https://www.credly.com/badges/7c55eb01-b743-42cf-ba56-a0307c49c45f/linked_in_profile'"> Credential </button> </li>
+								<li> <span> 2023-2026 </span><br> AWS Cloud Practitioner &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button class="new-btn btn-color-2"  onclick="location.href='https://www.credly.com/badges/72f11ffc-d7ad-4f3f-b35c-4e9a5bfa0e95/linked_in_profile'"> Credential </button></li>
 							</ul>
 						</div>
 					</div> 
@@ -364,6 +371,61 @@ experience for the user. <br><br></p>
 					
 						</div>
 					</div>
+				</div>
+
+				<div class="portfolio-item color-container"  id="maze_generator">
+					
+					<a href="#maze_generator" class="hidden-link"> </a>
+
+					<div class="portfolio-item-thumbnail">
+						
+						<img src="./Photos/maze_image.png" alt="mazeGame">
+						
+						<video  style="display: none; "  controls>
+							<source src="./Videos/maze_video.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video> 
+					</div>
+
+					<h2 class="portfolio-item-title"> Maze Generator and Path finder </h2>
+				
+				<div class= "btn-container">
+					<button class="new-btn btn-color-2" onclick="location.href='https://github.com/mehdie79/maze_generator'"> GitHub </button>
+				<button type = "button" class= "new-btn btn-color-2 view-project-btn">  Details </button>
+				</div>
+
+					<div class="portfolio-item-details" >
+					<div class="description">
+
+						<p> I embarked on a project to create a maze generator and pathfinding system, combining algorithmic challenges with a seamless frontend experience. Here's an overview of the project:</p>
+						<h2> <br> Project Purpose <br><br> </h2>
+					<p> The primary objective of this project was to develop a maze generation and pathfinding system that could be integrated into various applications, such as games or educational software. My goal was to create an efficient and visually appealing system that could generate mazes of varying sizes and complexity, and then find the shortest path from start to finish. </p>
+					<h2> <br> Features <br><br> </h2>
+
+					<ul style = "list-style-type: disc;">
+							<li> <b>Maze Generation: </b> I implemented a maze generator capable of creating mazes with customizable dimensions. Users can specify the width and height of the maze, and the algorithm generates random mazes, ensuring that there is a clear path from the entrance to the exit. </li>
+							<li> <b>Path Finding: </b> To determine the shortest path through the maze, I implemented pathfinding algorithms such as Depth-First Search and Breadth-First Search. These algorithms compute the optimal route from the starting point to the endpoint within a given maze.</li>
+							<li> <b>Visualization: </b> The frontend of the application provides a visual representation of both the maze generation process and the pathfinding results. Users can watch as the maze evolves and observe the algorithm solving it step by step. </li>
+							<li> <b>Customization: </b> Users have the flexibility to adjust maze parameters, such as the height and width of the maze, to create mazes of varying complexities.</li>
+							
+						</ul>
+
+						<h2> <br>  Challenges  <br><br> </h2>
+						<p> 1. <b>Maze Generation Algorithm:</b> Designing an efficient maze generation algorithm that creates challenging yet solvable mazes was a significant challenge. Extensive research and experimentation were necessary to develop an algorithm that strikes the right balance between complexity and solvability.  <br><br> </p>
+					<p> 2. <b>Integration of Frontend and Backend:</b> Coordinating the frontend and backend was crucial. The backend, responsible for maze generation and pathfinding, needed to communicate effectively with the frontend to display the results accurately. This required careful consideration of data transfer and synchronization between the two components. <br> <br></p>
+					<p> 3. <b>User Experience:</b> Ensuring an intuitive user experience was essential. Designing an engaging and user-friendly interface, including features like maze customization and real-time visualization, required attention to detail and a deep understanding of user expectations.<br><br></p> 
+					</div>
+					<div class="general-info">
+						<ul>	
+							<li>Technologies - <span> CSS, HTML, Python, Node.js </span></li>
+							<li>Role - <span> Developer </span></li>
+							<li>GitHub Link - <a href="https://github.com/mehdie79/maze_generator" target="_blank"style="text-decoration-line: none;"> https://github.com/mehdie79/maze_generator </a></li>
+
+						</ul>
+					
+						</div>
+					</div>
+				</div>
 				</div>
 			
 			</div>
