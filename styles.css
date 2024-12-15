@@ -144,6 +144,14 @@ section {
 	font-size: 1.75rem;
 	margin-bottom: 1rem;
 }
+.cv-link {
+        color: #f1f1f1;
+        text-decoration: underline;
+        transition: color 0.3s ease;
+}
+.cv-link:hover {
+        color: #fff;
+}
 .title {
 	font-size: 3rem;
 	text-align: center;
