@@ -485,7 +485,7 @@ form .btn2 {
 	flex-direction: column;
 	height: 70vh;
 	transition: all 0.02s ease-in-out;
-	margin-top: 1000px;
+	margin-top: 75%;
 	
 }
 #contact.fade-out {
@@ -518,6 +518,7 @@ form .btn2 {
 	font-size: larger;
 	
 }
+
 
 .section-title{
 	margin-top: 20px;
