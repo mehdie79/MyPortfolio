@@ -91,6 +91,44 @@
         .icon:hover::after {
             opacity: 1;
         }
+		.section__text {
+			
+			animation: fadeIn 2s ease-in-out forwards, slideUp 2s ease-in-out forwards;
+		}
+		.title, .section__text__p1, .section__text__p2 {
+			
+			opacity: 0;
+			animation: fadeInText 1s ease-in-out forwards;
+		}
+
+		/* Delay animation for name and title */
+		.section__text__p1 {
+			animation-delay: 0.5s;
+		}
+
+		.title {
+			animation-delay: 1s;
+		}
+		.section__text__p2 {
+			animation-delay: 1.5s;
+
+		}
+
+		/* Animation for fade-in and sliding up */
+		@keyframes fadeIn {
+			0% { opacity: 0; }
+			100% { opacity: 1; }
+		}
+
+		@keyframes slideUp {
+			0% { transform: translateY(50px); }
+			100% { transform: translateY(0); }
+		}
+		@keyframes fadeInText {
+			0% { opacity: 0; }
+			100% { opacity: 1; }
+		}
+		
     </style>
 	</head>
 	<body>
