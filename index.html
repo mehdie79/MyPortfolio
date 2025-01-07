@@ -9,6 +9,89 @@
 		
 		<link rel="stylesheet" href="styles.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+		<style>
+        /* Smooth scroll animation */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Section animations */
+        section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease-in-out;
+        }
+
+        section.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .new-btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            
+            background: linear-gradient(120deg, #ff004f, #5200ff);
+            z-index: -1;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s ease-in-out;
+        }
+
+        .new-btn:hover::before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .new-btn:hover {
+            color: white;
+        }
+
+        /* Profile picture animation */
+        .section__pic-container img {
+            transition: transform 0.5s ease;
+        }
+
+        .section__pic-container:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Project card hover effect */
+        .portfolio-item {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Tooltip for icons */
+        .icon {
+            position: relative;
+        }
+
+        .icon::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            top: 120%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: black;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .icon:hover::after {
+            opacity: 1;
+        }
+    </style>
 	</head>
 	<body>
 		<div class="main">
@@ -571,7 +654,22 @@ experience for the user. <br><br></p>
 					}
 				});
 			});
+
 			
+       // Animation trigger for sections
+        const sections = document.querySelectorAll('section');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
 
 			
 			
