@@ -92,42 +92,84 @@
             opacity: 1;
         }
 		.section__text {
-			
-			animation: fadeIn 2s ease-in-out forwards, slideUp 2s ease-in-out forwards;
-		}
+            opacity: 1;
+        }
+
+        .section__text.active {
+            opacity: 1;
+        }
+
 		.title, .section__text__p1, .section__text__p2 {
-			
+            opacity: 0;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 2px solid white; /* Cursor effect */
+        }
+		.text__container {
+			opacity:1;
+		}
+        
+        /* Ensure elements start hidden */
+		.section__text__p1, .title, .section__text__p2 {
 			opacity: 0;
-			animation: fadeInText 1s ease-in-out forwards;
+			overflow: hidden;
+			white-space: nowrap;
+			border-right: 2px solid white; /* Cursor effect */
 		}
 
-		/* Delay animation for name and title */
-		.section__text__p1 {
-			animation-delay: 0.5s;
+		/* Active state with typing animation */
+		.section__text__p1.active {
+			opacity:1;
+			animation: typing 2s steps(22, end), blink 0.5s step-end infinite alternate;
+			animation-fill-mode: forwards;
 		}
 
-		.title {
-			animation-delay: 1s;
-		}
-		.section__text__p2 {
-			animation-delay: 1.5s;
-
+		.title.active {
+			opacity:1;
+			animation: typing 2s steps(30, end), blink 0.5s step-end infinite alternate;
+			animation-fill-mode: forwards;
 		}
 
-		/* Animation for fade-in and sliding up */
-		@keyframes fadeIn {
-			0% { opacity: 0; }
-			100% { opacity: 1; }
+		.section__text__p2.active {
+			opacity:1;
+			animation: typing 2s steps(22, end), blink 0.5s step-end infinite alternate;
+			animation-fill-mode: forwards;
 		}
 
-		@keyframes slideUp {
-			0% { transform: translateY(50px); }
-			100% { transform: translateY(0); }
+		@keyframes typing {
+			from { width: 0; }
+			to { width: 100%; }
 		}
-		@keyframes fadeInText {
-			0% { opacity: 0; }
-			100% { opacity: 1; }
+
+		@keyframes blink {
+			from { border-color: transparent; }
+			to { border-color: white; }
 		}
+        .about-row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease-in-out;
+        }
+
+        .about-row.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+       
+        .about-col-1 img {
+            width: 100%;
+            border-radius: 10px;
+            transform: scale(0.9);
+            transition: transform 0.5s ease;
+        }
+
+        .about-col-1 img:hover {
+            transform: scale(1);
+        }
 		
     </style>
 	</head>
@@ -174,27 +216,26 @@
 			<div class="section__pic-container">
 				<img src="./Photos/my_photo.jpg" alt="Mehdi Esmaeilzadeh picture">
 			</div>
-			<div class="section__text">
-				<p class="section__text__p1"> Hello, I'm </p>
-				<h1 class="title"> Mehdi Esmaeilzadeh </h1>
-				<p class="section__text__p2"> Software Developer 
-				<div class="btn-container">
-					<button class="new-btn btn-color-2" onclick="window.open('./Mehdi_Esmaeilzadeh_CV.pdf')"> Download CV 
-						 
-					</button>
-					<button class="new-btn btn-color-1" onclick="location.href='./#contact'"> Contact Info </button>
+			<div class="about__text">
+				<div class= "text__container">
+                <p class="section__text__p1">Hello, I'm</p>
+                <h1 class="title">Mehdi Esmaeilzadeh</h1>
+                <p class="section__text__p2">Software Developer</p>
 				</div>
-
-			<div id="socials-container">
-				<a class="icon" href="https://github.com/mehdie79" target="_blank"> <i class="fa-brands fa-github"></i> </a>
-						<a class="icon" href="https://linkedin.com/in/mehdi-esmaeilzadeh" target="_blank"> <i class="fa-brands fa-linkedin"></i>  </a>
-			</div>
-		</div>
+                <div class="btn-container">
+                    <button class="new-btn btn-color-2" onclick="window.open('./Mehdi_Esmaeilzadeh_CV.pdf')">Download CV</button>
+                    <button class="new-btn btn-color-1" onclick="location.href='./#contact'">Contact Info</button>
+                </div>
+                <div id="socials-container">
+                    <a class="icon" href="https://github.com/mehdie79" target="_blank" data-tooltip="GitHub"> <i class="fa-brands fa-github"></i> </a>
+                    <a class="icon" href="https://linkedin.com/in/mehdi-esmaeilzadeh" target="_blank" data-tooltip="LinkedIn"> <i class="fa-brands fa-linkedin"></i>  </a>
+                </div>
+            </div>
 	</section>
 		
 		<div id="about">
 			<div class="container">
-				<div class="row">
+				<div class="about-row">
 					<div class="about-col-1">
 						<img src="./Photos/about_me_pic.jpg" alt="MehdiEsmaeilzadehPicture">
 					</div> 
@@ -698,12 +739,56 @@ experience for the user. <br><br></p>
 					}
 				});
 			});
+        
+	const textElements = document.querySelectorAll(".section__text__p1, .title, .section__text__p2");
 
+    // Function to animate elements sequentially
+    const animateSequentially = () => {
+        setTimeout(() => textElements[0]?.classList.add("active"), 0); // First part immediately
+        setTimeout(() => textElements[1]?.classList.add("active"), 2500); // After first finishes
+        setTimeout(() => textElements[2]?.classList.add("active"), 5000); // After second finishes
+    };
+
+    const observer_text = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            const inProfile = entry.target.closest("#profile"); // Check if inside #profile
+            if (entry.isIntersecting) {
+                if (inProfile) {
+                    animateSequentially();
+                } else {
+                    textElements.forEach(el => el.classList.add("active")); // Immediate animation
+                }
+            } else {
+                // Remove active class when the element is out of view
+                textElements.forEach(el => el.classList.remove("active"));
+            }
+        });
+    }, { threshold: 0.1 });
+
+    // Observe all sections
+    const sections_text = document.querySelectorAll(".section__text__p1, .title, .section__text__p2");
+    sections_text.forEach(section => observer_text.observe(section));
+		 
+            
+
+        const aboutRow = document.querySelector(".about-row");
+            
+			const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        aboutRow.classList.add("active");
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            observer.observe(aboutRow);
+        
+        
 			
        // Animation trigger for sections
         const sections = document.querySelectorAll('section');
 
-        const observer = new IntersectionObserver(entries => {
+        const observer_section = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
@@ -712,7 +797,7 @@ experience for the user. <br><br></p>
         });
 
         sections.forEach(section => {
-            observer.observe(section);
+            observer_section.observe(section);
         });
 
 			
