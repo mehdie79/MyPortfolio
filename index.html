@@ -989,6 +989,11 @@ experience for the user. <br><br></p>
 				clickedNode.isClicked = false;
 				clickedNode = null;
 			}
+			nodes.forEach(node => {
+				if (node.isClicked ) {
+					node.isClicked =false;
+				}
+			});
 		});
 
 		
