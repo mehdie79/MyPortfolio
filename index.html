@@ -170,12 +170,51 @@
         .about-col-1 img:hover {
             transform: scale(1);
         }
-		
+
+		.animated-background {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100vw;
+			height: 100vh;
+			z-index: -1; /* Keeps it behind the content */
+			background: white; /* Base color */
+			overflow: hidden;
+			pointer-events: none; /* Prevent interaction */
+		}
+
+		/* Example Animation: Light Matrix */
+		@keyframes matrix {
+			0% {
+				background-position: 0 0;
+			}
+			100% {
+				background-position: 0 100%;
+			}
+		}
+
+		.animated-background {
+			background-image: repeating-linear-gradient(
+				to bottom,
+				rgba(0, 0, 0, 0.1) 1px,
+				transparent 2px
+			);
+			animation: matrix 5s linear infinite;
+			background-size: 100% 200%;
+			opacity: 0.3; /* Adjust transparency for subtle effect */
+		}
+
+
+	
+      
     </style>
 	</head>
 	<body>
+		<canvas id="animatedCanvas"></canvas>
+		
+        <div class="animated-background"></div>
 		<div class="main">
-
+         
 		<div id="header"> 
 			<div class = "container"> 
 				<nav> 
@@ -213,6 +252,7 @@
 			</div>
 			</nav>
 		<section id = "profile">
+			
 			<div class="section__pic-container">
 				<img src="./Photos/my_photo.jpg" alt="Mehdi Esmaeilzadeh picture">
 			</div>
@@ -231,63 +271,68 @@
                     <a class="icon" href="https://linkedin.com/in/mehdi-esmaeilzadeh" target="_blank" data-tooltip="LinkedIn"> <i class="fa-brands fa-linkedin"></i>  </a>
                 </div>
             </div>
+		
 	</section>
 		
-		<div id="about">
-			<div class="container">
-				<div class="about-row">
-					<div class="about-col-1">
-						<img src="./Photos/about_me_pic.jpg" alt="MehdiEsmaeilzadehPicture">
-					</div> 
+	<div id="about">
+    <div class="container">
+        <div class="about-row">
+            <div class="about-col-1">
+                <img src="./Photos/about_me_pic.jpg" alt="Mehdi Esmaeilzadeh Picture">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title white">About Me</h1>
+                <p>
+                    Highly motivated and passionate computer science graduate with extensive programming skills including 
+                    C/C++, Java, and Python. You can find more details about my academic background and technical skills in 
+                    my <a href="./Mehdi_Esmaeilzadeh_CV.pdf" target="_blank">CV</a>.
+                </p>
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('hobby')">Hobby</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                    <p class="tab-links" onclick="opentab('certification')">Certification</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Languages</span><br> C++, C, Java, Python, HTML, CSS</li>
+                        <li><span>Programs</span><br> Visual Studio, VMware, Microsoft SQL, Git, Linux/Unix, Bash, GDB, Valgrind, CMake</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="hobby">
+                    <ul>
+                        <li><span>Sports</span><br> Soccer, Basketball, Chess, Swimming</li>
+                        <li><span>Other Hobbies</span><br> Coding, Problem-solving, Spending time with family</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2019-2023</span><br> Simon Fraser University</li>
+                        <li><span>2017-2019</span><br> Riverside Secondary School</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="certification">
+                    <ul>
+                        <li>
+                            <span>2023-2026</span><br> AWS Certified Solutions Architect – Associate
+                            <button class="new-btn btn-color-2" onclick="location.href='https://www.credly.com/badges/7c55eb01-b743-42cf-ba56-a0307c49c45f/linked_in_profile'">Credential</button>
+                        </li>
+                        <li>
+                            <span>2023-2026</span><br> AWS Cloud Practitioner
+                            <button class="new-btn btn-color-2" onclick="location.href='https://www.credly.com/badges/72f11ffc-d7ad-4f3f-b35c-4e9a5bfa0e95/linked_in_profile'">Credential</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-					<div class="about-col-2">
-						<h1 class ="sub-title white">About Me </h1>
-						<p> Highly motivated and passionate computer science graduate with extensive programming skills including C/C++, Java, and Python. You can find more details about my academic background and technical skills in my <a href="./Mehdi_Esmaeilzadeh_CV.pdf" target="_blank">CV</a>.</p>
-						<div class= "tab-titles">
-							<p class="tab-links active-link" onclick="opentab('skills')" > Skills </p>
-							<p class="tab-links" onclick="opentab('hobby')" > Hobby </p>
-							<p class="tab-links" onclick="opentab('education')" > Education </p>
-							<p class="tab-links" onclick="opentab('certification')" > Certification </p>
-						</div>
-						<div class= "tab-contents active-tab" id= "skills"> 
-							<ul> 
-								<li> <span> Languages </span><br> C++, C, Java, Python, HTML, CSS </li>
-								<li> <span> Programs </span><br>  Visual Studio, VMware, Microsoft SQL, Git, Linux/Unix, Bash, GDB, Valgrind, CMake</li>
-
-							</ul>
-						</div>
-						<div class= "tab-contents" id= "hobby"> 
-							<ul> 
-								<li> <span> Sports </span><br> Soccer, Basketball, chess, Swimming </li>
-								<li> <span> Other Hobbies </span><br> Coding, Problem solving, spending time with family </li>
-
-							</ul>
-						</div>
-						<div class= "tab-contents" id= "education"> 
-							<ul> 
-								<li> <span> 2019-2023 </span><br> Simon Fraser University </li>
-								<li> <span> 2017-2019 </span><br> Riverside Secondary School </li>
-							</ul>
-						</div>
-						<div class= "tab-contents" id= "certification"> 
-							<ul> 
-								<li> <span> 2023-2026 </span><br> AWS Certified Solutions Architect – Associate &nbsp;&nbsp;&nbsp;&nbsp; <button class="new-btn btn-color-2"  onclick="location.href='https://www.credly.com/badges/7c55eb01-b743-42cf-ba56-a0307c49c45f/linked_in_profile'"> Credential </button> </li>
-								<li> <span> 2023-2026 </span><br> AWS Cloud Practitioner &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button class="new-btn btn-color-2"  onclick="location.href='https://www.credly.com/badges/72f11ffc-d7ad-4f3f-b35c-4e9a5bfa0e95/linked_in_profile'"> Credential </button></li>
-							</ul>
-						</div>
-					</div> 
-			
-
-				</div> 
-			
-
-			</div> 
-
-
-		</div>
+	
 	
 
 	<section class="portfolio-section sec-padding" id="project" >
+		    
 			<div class="container" >
 				
 					<div class= "section-title">
@@ -650,7 +695,7 @@ experience for the user. <br><br></p>
 			</section>
 
 			<footer>
-				<p>Copyright &#169; 2023 Mehdi Esmaeilzadeh. All Rights Reserved </p>
+				<p style="color:gray;">Copyright &#169; 2025 Mehdi Esmaeilzadeh. All Rights Reserved </p>
 			</footer>
 			
 			
@@ -683,28 +728,36 @@ experience for the user. <br><br></p>
 			}
 
 			document.addEventListener("click", (e) => {
-				if(e.target.classList.contains("view-project-btn")) {
-
-
+				if (e.target.classList.contains("view-project-btn")) {
 					togglePortfolioPopup();
-					
-					document.querySelector(".portfolio-popup").scrollTo(0,0);
+					document.querySelector(".portfolio-popup").scrollTo(0, 0);
 					portfolioItemDetails(e.target.parentElement.parentElement);
 				}
-
-			})
-			document.addEventListener("click", (e) => {
-				if(e.target.classList.contains("pp-inner")) {
-					togglePortfolioPopup();
-				} 
-
 			});
+
+			// Prevent popup close for canvas clicks
+			document.addEventListener("click", (e) => {
+				if (e.target.classList.contains("pp-inner")) {
+					togglePortfolioPopup();
+				}
+			});
+
+
 
 			function togglePortfolioPopup() {
 				document.querySelector(".portfolio-popup").classList.toggle("open");
 				document.body.classList.toggle("hide-scrolling");
 				document.querySelector(".main").classList.toggle("fade-out");
 				document.getElementById("contact").classList.toggle("fade-out");
+
+				// Check if the popup is open
+				if (document.querySelector(".portfolio-popup").classList.contains("open")) {
+					isProjectDetail = true;
+					pulsatingNodesAnimation(); // Start project detail animation
+				} else {
+					isProjectDetail = false;
+					mainGraphAnimation(); // Resume main graph animation
+				}
 				
 			}
 			document.querySelector(".pp-close").addEventListener("click", togglePortfolioPopup)
@@ -787,6 +840,7 @@ experience for the user. <br><br></p>
 			
        // Animation trigger for sections
         const sections = document.querySelectorAll('section');
+		const about = document.querySelector("#about");
 
         const observer_section = new IntersectionObserver(entries => {
             entries.forEach(entry => {
@@ -799,6 +853,272 @@ experience for the user. <br><br></p>
         sections.forEach(section => {
             observer_section.observe(section);
         });
+        observer_section.observe(about);
+		
+		var canvas = document.getElementById("animatedCanvas");
+		const ctx = canvas.getContext("2d");
+        let isProjectDetail = false; // Track which animation is active
+		canvas.width = window.innerWidth;
+		canvas.height = window.innerHeight;
+		const attractionRadius = 50; // Radius around the mouse for attraction
+        const attractionStrength = 0.1; // Strength of attraction (higher = stronger)
+
+		const nodes = [];
+		const numNodes = 50;
+		const maxDistance = 150;
+
+		// Resize Canvas
+		window.addEventListener("resize", () => {
+			canvas.width = window.innerWidth;
+			canvas.height = window.innerHeight;
+		});
+
+
+		
+
+	   // Store mouse position and clicked state
+		let mouse = { x: null, y: null };
+		let clickedNode = null; // Track the node being clicked
+
+		// Node Class
+		class Node {
+			constructor(x, y, radius, speedX, speedY) {
+				this.x = x;
+				this.y = y;
+				this.radius = radius;
+				this.speedX = speedX;
+				this.speedY = speedY;
+				this.isClicked = false; // Track if this node is clicked
+			}
+
+			draw() {
+				ctx.beginPath();
+				ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+				ctx.fillStyle = this.isClicked ? "rgba(255, 0, 0, 0.8)" : "rgba(0, 0, 0, 0.7)";
+				ctx.fill();
+				ctx.closePath();
+			}
+
+			update() {
+				// Regular movement for unclicked nodes
+				// Node follows the mouse if within attraction radius
+				if (mouse.x && mouse.y) {
+					const dx = mouse.x - this.x;
+					const dy = mouse.y - this.y;
+					const distance = Math.sqrt(dx * dx + dy * dy);
+
+					if (distance < attractionRadius) {
+						this.x += dx * attractionStrength;
+						this.y += dy * attractionStrength;
+					}
+				}
+
+				// Regular movement
+				this.x += this.speedX;
+				this.y += this.speedY;
+
+				// Bounce off edges
+				if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+				if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+				if (!this.isClicked) {
+					this.x += this.speedX;
+					this.y += this.speedY;
+
+					// Bounce off edges
+					if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+					if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+				}
+
+				this.draw();
+
+				// If clicked, draw a line to the mouse position
+				if (this.isClicked && mouse.x !== null && mouse.y !== null) {
+					ctx.beginPath();
+					ctx.moveTo(this.x, this.y);
+					ctx.lineTo(mouse.x, mouse.y);
+					//ctx.strokeStyle = "rgba(255, 0, 0, 0.8)";
+					ctx.lineWidth = 2;
+					ctx.stroke();
+					ctx.closePath();
+				}
+			}
+		}
+		
+		document.addEventListener("mousedown", (event) => {
+			//console.log("Mousedown event triggered!"); // Simple test
+    		//console.log(event); // Check the event object
+			const rect = canvas.getBoundingClientRect();
+			const mouseX = event.clientX - rect.left;
+			const mouseY = event.clientY - rect.top;
+
+			console.log(mouse.x)
+
+			// Check if a node is clicked
+			clickedNode = null; // Reset clicked node
+			nodes.forEach(node => {
+				const distance = Math.sqrt(
+					(mouseX - node.x) * (mouseX - node.x) + (mouseY - node.y) * (mouseY - node.y)
+				);
+				if (distance < node.radius + 10) { // Slightly larger radius for easier clicking
+					clickedNode = node; // Set clicked node
+					node.isClicked = true;
+				}
+			});
+			
+		});
+
+		// On mouse move, stretch the clicked node
+		document.addEventListener("mousemove", (event) => {
+			//console.log("Mousedown event triggered!"); // Simple test
+			const rect = canvas.getBoundingClientRect();
+			mouse.x = event.clientX - rect.left;
+			mouse.y = event.clientY - rect.top;
+			if (clickedNode) {
+
+				// Stretch the node toward the mouse position
+				clickedNode.x += (mouse.x - clickedNode.x) * 0.1; // Smooth stretch
+				clickedNode.y += (mouse.y - clickedNode.y) * 0.1;
+				
+			}
+		});
+
+        
+		// Reset node on mouse release
+		document.addEventListener("mouseup", () => {
+			if (clickedNode) {
+				clickedNode.isClicked = false;
+				clickedNode = null;
+			}
+		});
+
+		
+
+		// Reset mouse position when leaving the canvas
+		document.addEventListener("mouseleave", () => {
+			mouse.x = null;
+			mouse.y = null;
+			if (clickedNode) { //important to reset if the mouse leave the canvas
+				clickedNode.isClicked = false;
+				clickedNode = null;
+			}
+		});
+
+
+		// Create nodes
+		for (let i = 0; i < numNodes; i++) {
+			const x = Math.random() * canvas.width;
+			const y = Math.random() * canvas.height;
+			const radius = 3;
+			const speedX = (Math.random() - 0.5) * 1.5;
+			const speedY = (Math.random() - 0.5) * 1.5;
+			nodes.push(new Node(x, y, radius, speedX, speedY));
+		}
+
+		// Draw connections between close nodes
+		function drawConnections() {
+			for (let i = 0; i < nodes.length; i++) {
+				for (let j = i + 1; j < nodes.length; j++) {
+					const dx = nodes[i].x - nodes[j].x;
+					const dy = nodes[i].y - nodes[j].y;
+					const distance = Math.sqrt(dx * dx + dy * dy);
+
+					if (distance < maxDistance) {
+						ctx.beginPath();
+						ctx.moveTo(nodes[i].x, nodes[i].y);
+						ctx.lineTo(nodes[j].x, nodes[j].y);
+						ctx.strokeStyle = `rgba(0, 0, 0, ${1 - distance / maxDistance})`;
+						ctx.lineWidth = 1;
+						ctx.stroke();
+						ctx.closePath();
+					}
+				}
+			}
+		}
+
+		// Exclude `#about` text region
+		function maskAboutSection() {
+			const aboutText = document.querySelector(".about-col-2"); // Target only the text area
+			
+			const contactText = document.querySelector(".contact-info-upper-container"); // Target only the text area
+			const header = document.querySelector("#header");
+			const rect = aboutText.getBoundingClientRect();
+			const rect_header = header.getBoundingClientRect();
+			const rect_contact = contactText.getBoundingClientRect();
+
+			const buttonContainer = document.querySelector(".btn-container");
+			const socialLinksContainer = document.querySelector("#socials-container");
+
+			
+			const buttonRect = buttonContainer.getBoundingClientRect();
+			const socialLinksRect = socialLinksContainer.getBoundingClientRect();
+
+			ctx.clearRect(
+				rect.left - 20,  // Add padding to the left
+				rect.top - 20,   // Add padding to the top
+				rect.width + 40, // Add padding to the right
+				rect.height + 40 // Add padding to the bottom
+			); // Clear the text region
+
+			ctx.clearRect(
+				rect_header.left,  // Add padding to the left
+				rect_header.top ,   // Add padding to the top
+				rect_header.width , // Add padding to the right
+				rect_header.height // Add padding to the bottom
+			); // Clear the text region
+			ctx.clearRect(
+				rect_contact.left,  // Add padding to the left
+				rect_contact.top ,   // Add padding to the top
+				rect_contact.width, // Add padding to the right
+				rect_contact.height// Add padding to the bottom
+			); // Clear the text region
+
+			ctx.clearRect(
+				buttonRect.left -5,
+				buttonRect.top -5,
+				buttonRect.width +10,
+				buttonRect.height +10
+			);
+
+			ctx.clearRect(
+				socialLinksRect.left-5,
+				socialLinksRect.top-5,
+				socialLinksRect.width+10,
+				socialLinksRect.height +10
+			);
+		}
+
+		
+
+        // Pulsating Nodes Animation for Project Details
+		function pulsatingNodesAnimation() {
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			if (isProjectDetail) requestAnimationFrame(pulsatingNodesAnimation);
+		}
+
+		// Animation Loop
+		function mainGraphAnimation() {
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+			// Update and draw nodes
+			nodes.forEach(node => node.update());
+
+			// Draw connections
+			drawConnections();
+
+			// Apply mask for `#about`
+			maskAboutSection();
+
+			if (!isProjectDetail) requestAnimationFrame(mainGraphAnimation);
+		}
+
+		mainGraphAnimation();
+
+		
+
+		
+
+		
+
 
 			
 			
