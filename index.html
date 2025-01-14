@@ -694,6 +694,10 @@ experience for the user. <br><br></p>
 				
 			</section>
 
+			<button id="backToTop" class="back-to-top-btn">
+				<i class="fa fa-arrow-up"></i>
+			</button>
+
 			<footer>
 				<p style="color:gray;">Copyright &#169; 2025 Mehdi Esmaeilzadeh. All Rights Reserved </p>
 			</footer>
@@ -742,6 +746,28 @@ experience for the user. <br><br></p>
 				}
 			});
 
+            // Get the button
+			const backToTopBtn = document.getElementById("backToTop");
+
+			// Show the button when the user scrolls down
+			window.addEventListener("scroll", () => {
+				if (window.scrollY > 300 && !document.querySelector(".portfolio-popup").classList.contains("open")) { // Show after 300px scroll
+					backToTopBtn.classList.add("visible");
+				} else {
+					backToTopBtn.classList.remove("visible");
+				}
+			});
+
+			// Scroll smoothly to the top when the button is clicked
+			backToTopBtn.addEventListener("click", () => {
+				if(!document.querySelector(".portfolio-popup").classList.contains("open")) {
+						window.scrollTo({
+						top: 0,
+						behavior: "smooth",
+					});
+				}
+				
+			});
 
 
 			function togglePortfolioPopup() {
@@ -749,6 +775,12 @@ experience for the user. <br><br></p>
 				document.body.classList.toggle("hide-scrolling");
 				document.querySelector(".main").classList.toggle("fade-out");
 				document.getElementById("contact").classList.toggle("fade-out");
+
+				 if (document.querySelector(".portfolio-popup").classList.contains("open")) {
+					backToTopBtn.classList.remove("visible"); // Hide the button
+				} else if (window.scrollY > 300) {
+					backToTopBtn.classList.add("visible"); // Show the button if scrolled
+				}
 
 				// Check if the popup is open
 				if (document.querySelector(".portfolio-popup").classList.contains("open")) {
